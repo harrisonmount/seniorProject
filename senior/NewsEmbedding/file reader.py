@@ -16,10 +16,10 @@ def readDB(database):
 
     for subdir, dirs, files in os.walk(path):
         for filename in files:#loop down each tweet directory
-            if filename.endswith("who-follows-whom.txt"):
+            if filename.endswith("who-follows-whom.dat"):
                 fpath = os.path.join(subdir, "who-follows-whom.dat")
                 npath = os.path.join(subdir, "who-follows-whom.txt")
-                #os.rename(fpath, npath) #USE IF who-follows-whom are still .dat files, change above to endswith("who-follows-whom.dat")
+                os.rename(fpath, npath) #USE IF who-follows-whom are still .dat files, change above to endswith("who-follows-whom.dat")
                 f = open(npath, "r")
                 for line in f:
                     x = line.split()#separate the line into two integers
